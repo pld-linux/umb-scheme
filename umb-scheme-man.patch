@@ -1,0 +1,14 @@
+--- scheme-3.2/scheme.1~	Sun Jan 21 17:15:52 1996
++++ scheme-3.2/scheme.1	Fri Dec 13 17:37:04 1996
+@@ -345,9 +345,9 @@
+ UMB Scheme does not support nested debugging sessions.  (Keep it simple.)
+ .fi
+ .SH FILES
+-/usr/local/lib/scheme/prelude.scheme
++/usr/lib/ubm-scheme/prelude.scheme
+ .br
+-/usr/local/lib/scheme/SLIB-for-umb-scheme.init
++/usr/lib/umb-scheme/SLIB-for-umb-scheme.init
+ .br
+ /usr/local/lib/slib/*
+ 

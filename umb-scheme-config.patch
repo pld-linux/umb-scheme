@@ -1,0 +1,42 @@
+--- scheme-3.2/SLIB-for-umb-scheme.init~ Sun Jan 21 17:15:47 1996
++++ scheme-3.2/SLIB-for-umb-scheme.init	Fri Dec 13 17:33:24 1996
+@@ -40,7 +40,7 @@
+ 
+ (define (implementation-vicinity)
+   (case (software-type)
+-    ((UNIX)	 "/usr/local/src/scheme/")
++    ((UNIX)	 "/usr/lib/umb-scheme/")
+     ((VMS)	"scheme$src:")
+     ((MS-DOS)	"C:\\scheme\\")))
+ 
+@@ -55,7 +55,7 @@
+ 	  ;; Use this path if your scheme does not support GETENV
+ 	  ;; or if SCHEME_LIBRARY_PATH is not set.
+ 	  (case (software-type)
+-	    ((UNIX) "/usr/local/lib/slib/")
++	    ((UNIX) "/usr/lib/umb-scheme/slib/")
+ 	    ((VMS) "lib$scheme:")
+ 	    ((MS-DOS) "C:\\SLIB\\")
+ 	    (else "")))))
+--- scheme-3.2/steering.c~	Sun Jan 21 17:15:53 1996
++++ scheme-3.2/steering.c	Fri Dec 13 17:38:45 1996
+@@ -62,7 +62,7 @@
+ 
+ #define TOP_LEVEL_PROMPT "\n==> "
+ 
+-#define STANDARD_PRELUDE_PATHNAME "/usr/local/lib/scheme/prelude.scheme"
++#define STANDARD_PRELUDE_PATHNAME "/usr/lib/umb-scheme/prelude.scheme"
+ 
+ Private String OPENING  =
+ "Welcome to UMB Scheme, version      Copyright (c) 1988,1996 William R Campbell.\n\
+--- scheme-3.2/prelude.scheme~	Sun Jan 21 17:15:51 1996
++++ scheme-3.2/prelude.scheme	Fri Dec 13 17:43:21 1996
+@@ -708,7 +708,7 @@
+ ; 
+ ; Comment this out if you don't want to use SLIB
+ 
+-(load "/usr/local/lib/scheme/SLIB-for-umb-scheme.init")
++(load "/usr/lib/umb-scheme/SLIB-for-umb-scheme.init")
+ 
+ ; MAINTENANCE PROCEDURES
+ 

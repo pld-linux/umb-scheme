@@ -1,0 +1,11 @@
+--- scheme-3.2/scheme.texinfo.marc	Wed Aug 28 15:26:34 1996
++++ scheme-3.2/scheme.texinfo	Wed Aug 28 15:27:01 1996
+@@ -63,7 +63,7 @@
+ @page
+ 
+ @ifinfo
+-@node Top, Copying,, (DIR)
++@node Top, Copying, Files, (DIR)
+ @ichapter Introduction
+ 
+ This manual documents how to install and use UMB Scheme as

@@ -1,0 +1,21 @@
+--- scheme-3.2/Makefile.marc	Wed Aug 28 13:09:27 1996
++++ scheme-3.2/Makefile	Wed Aug 28 13:10:01 1996
+@@ -1,6 +1,6 @@
+ # Makefile for the UMB Scheme interpreter.
+ CC = gcc
+-CFLAGS =  -g -O   -pedantic -Wall
++CFLAGS =  $(RPM_OPT_FLAGS)  -pedantic -Wall
+ 
+ #CC = cc
+ #CFLAGS = -O 
+--- scheme-3.2/portable.h.marc	Wed Aug 28 13:09:31 1996
++++ scheme-3.2/portable.h	Wed Aug 28 13:09:47 1996
+@@ -94,7 +94,7 @@
+    a float.h defns file then replace the definition of DBL_MIN with
+    an #include <float.h>                                                 */
+ 
+-#define DBL_MIN 10e-307
++#include <float.h>
+ 
+ #ifdef sun
+ extern int    fclose( /* FILE *stream */ );
