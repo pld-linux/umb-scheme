@@ -4,14 +4,15 @@ Summary(fr): Interpréteur Scheme de l'université du Massachusetts de Boston
 Summary(tr): UMB Scheme yorumlayýcýsý
 Name:        umb-scheme
 Version:     3.2
-Release:     8
+Release:     9
 Copyright:   GPL
 Group:       Development/Languages
 Source:      ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
-Patch0:      umb-scheme-3.2-misc.patch
-Patch1:      umb-scheme-3.2-texinfo.patch
-Patch2:      umb-scheme-3.2-config.patch
-Patch3:      umb-scheme-3.2-man.patch
+Patch0:      umb-scheme-misc.patch
+Patch1:      umb-scheme-texinfo.patch
+Patch2:      umb-scheme-config.patch
+Patch3:      umb-scheme-man.patch
+Patch4:      umb-scheme-info.patch
 BuildRoot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -36,6 +37,7 @@ tanýmlanan dilin bir gerçeklemesidir.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 make
@@ -53,30 +55,34 @@ install prelude.scheme $RPM_BUILD_ROOT/usr/lib/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT/usr/lib/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT/usr/info/umb-scheme.info
-gzip -9nf $RPM_BUILD_ROOT/usr/info/umb-scheme.info
+
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/*.info*,/man/man1/*}
+
+%post
+/sbin/install-info /usr/info/umb-scheme.info.gz /etc/info-dir
+
+%preun
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete /usr/info/umb-scheme.info.gz /etc/info-dir
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-/sbin/install-info /usr/info/umb-scheme.info.gz /usr/info/dir \
-  --entry="* umb-scheme: (umb-scheme).                     UMB Scheme Interpreter."
-
-%preun
-if [ "$1" = 0 ]; then
-    /sbin/install-info --delete /usr/info/umb-scheme.info.gz /usr/info/dir \
-      --entry="* umb-scheme: (umb-scheme).                     UMB Scheme Interpreter."
-fi
 
 %files
 %defattr(644, root, root, 755)
 %doc slib/ANNOUNCE slib/FAQ slib/README
 /usr/lib/umb-scheme
 %attr(755, root, root) /usr/bin/umb-scheme
-%attr(644, root,  man) /usr/man/man1/umb-scheme.1
+%attr(644, root,  man) /usr/man/man1/*
 /usr/info/umb-scheme.info.gz
 
 %changelog
+* Mon Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.2-9]
+- standarized {un}registering info pages (added umb-scheme-info.patch),
+- added gzipping man pages.
+
 * Thu Nov 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.2-8]
 - changed Buildroot to /tmp/%%{name}-%%{version}-root,
