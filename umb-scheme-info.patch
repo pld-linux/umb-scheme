@@ -1,10 +1,11 @@
-diff -Nru scheme-3.2/scheme.texinfo scheme-3.2.new/scheme.texinfo
---- scheme-3.2/scheme.texinfo	Sun Jan  3 18:34:34 1999
-+++ scheme-3.2.new/scheme.texinfo	Sun Jan  3 19:50:22 1999
+--- scheme-3.2/scheme.texinfo~	Sun Jan 21 23:15:53 1996
++++ scheme-3.2/scheme.texinfo	Sat Dec 15 17:01:23 2001
 @@ -63,8 +63,18 @@
  @page
  
  @ifinfo
+-@node Top, Copying,, (DIR)
+-@ichapter Introduction
 +@format
 +@dircategory Programming Languages:
 +@direntry
@@ -14,8 +15,8 @@ diff -Nru scheme-3.2/scheme.texinfo scheme-3.2.new/scheme.texinfo
 +@end ifinfo
 +
 +@ifinfo
- @node Top, Copying, Files, (DIR)
- @ichapter Introduction
++@node Top, Copying, Files, (DIR)
++@chapter Introduction
 +@top IEEE Standard for the Scheme Programming Language
  
  This manual documents how to install and use UMB Scheme as
