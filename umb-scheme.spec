@@ -54,22 +54,22 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,info,lib/umb-scheme/slib,man/man1}
 
 install -s scheme $RPM_BUILD_ROOT/usr/bin/umb-scheme
-install scheme.1 $RPM_BUILD_ROOT/usr/man/man1/umb-scheme.1
+install scheme.1 $RPM_BUILD_ROOT%{_mandir}/man1/umb-scheme.1
 
 install slib/*.{scm,init} $RPM_BUILD_ROOT/usr/lib/umb-scheme/slib
 install prelude.scheme $RPM_BUILD_ROOT/usr/lib/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT/usr/lib/umb-scheme
 
-install scheme.info $RPM_BUILD_ROOT/usr/info/umb-scheme.info
+install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
 	slib/ANNOUNCE slib/FAQ slib/README
 
 %post
-/sbin/install-info /usr/info/umb-scheme.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/umb-scheme.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/umb-scheme.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/umb-scheme.info.gz /etc/info-dir
 fi
 
 %clean
@@ -81,9 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/umb-scheme
 
 %attr(755,root,root) /usr/bin/umb-scheme
-/usr/man/man1/*
+%{_mandir}/man1/*
 
-/usr/info/umb-scheme.info.gz
+%{_infodir}/umb-scheme.info.gz
 
 %changelog
 * Mon Apr 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
