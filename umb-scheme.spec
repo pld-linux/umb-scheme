@@ -1,19 +1,21 @@
-Summary:     Scheme interpreter from U of Massachusetts at Boston
-Summary(de): Scheme-Interpretierer von der Massachusetts-Uni in Boston 
-Summary(fr): Interpréteur Scheme de l'université du Massachusetts de Boston
-Summary(tr): UMB Scheme yorumlayýcýsý
-Name:        umb-scheme
-Version:     3.2
-Release:     9
-Copyright:   GPL
-Group:       Development/Languages
-Source:      ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
-Patch0:      umb-scheme-misc.patch
-Patch1:      umb-scheme-texinfo.patch
-Patch2:      umb-scheme-config.patch
-Patch3:      umb-scheme-man.patch
-Patch4:      umb-scheme-info.patch
-BuildRoot:   /tmp/%{name}-%{version}-root
+Summary:	Scheme interpreter from U of Massachusetts at Boston
+Summary(de):	Scheme-Interpretierer von der Massachusetts-Uni in Boston 
+Summary(fr):	Interpréteur Scheme de l'université du Massachusetts de Boston
+Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
+Summary(tr):	UMB Scheme yorumlayýcýsý
+Name:		umb-scheme
+Version:	3.2
+Release:	10
+Copyright:	GPL
+Group:		Development/Languages
+Group(pl):	Programowanie/Jêzyki
+Source:		ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
+Patch0:		umb-scheme-misc.patch
+Patch1:		umb-scheme-texinfo.patch
+Patch2:		umb-scheme-config.patch
+Patch3:		umb-scheme-man.patch
+Patch4:		umb-scheme-info.patch
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 UMB Scheme is an implementation of the language described in the IEEE
@@ -27,6 +29,10 @@ Scheme-Programmiersprache (Dez. 1990) festgelegte Sprache.
 UMB Scheme est une implémentation du langage dans le standard IEEE pour
 la programation en langage Scheme (Décembre 1990).
 
+%description -l pl
+UMB Scheme jest implementacj± jêzyka opisanego w dokumencie:
+"IEEE Standard for the Scheme Programming Language (December, 1990)".
+
 %description -l tr
 UMB Scheme, IEEE Scheme Programlama Dili Standardý'nda (Aralýk, 1990)
 tanýmlanan dilin bir gerçeklemesidir.
@@ -37,7 +43,6 @@ tanýmlanan dilin bir gerçeklemesidir.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 make
@@ -55,14 +60,14 @@ install prelude.scheme $RPM_BUILD_ROOT/usr/lib/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT/usr/lib/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT/usr/info/umb-scheme.info
-
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/*.info*,/man/man1/*}
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
+	slib/ANNOUNCE slib/FAQ slib/README
 
 %post
 /sbin/install-info /usr/info/umb-scheme.info.gz /etc/info-dir
 
 %preun
-if [ $1 = 0 ]; then
+if [ "$1" = "0" ]; then
 	/sbin/install-info --delete /usr/info/umb-scheme.info.gz /etc/info-dir
 fi
 
@@ -70,18 +75,28 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%doc slib/ANNOUNCE slib/FAQ slib/README
+%defattr(644,root,root,755)
+%doc slib/ANNOUNCE.gz slib/FAQ slib/README.gz
 /usr/lib/umb-scheme
-%attr(755, root, root) /usr/bin/umb-scheme
-%attr(644, root,  man) /usr/man/man1/*
+
+%attr(755,root,root) /usr/bin/umb-scheme
+/usr/man/man1/*
+
 /usr/info/umb-scheme.info.gz
 
 %changelog
-* Mon Dec 27 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+* Mon Apr 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.2-10]
+- added Group(pl),
+- standarized {un}registering info pages (added umb-scheme-info.patch).
+
+* Sun Mar 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.2-9]
-- standarized {un}registering info pages (added umb-scheme-info.patch),
-- added gzipping man pages.
+- removed man group from man pages.
+
+* Sun Dec 13 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+  [3.2-8d]
+- major changes -- build for PLD Tornado. 
 
 * Thu Nov 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.2-8]
