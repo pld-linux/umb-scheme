@@ -46,7 +46,7 @@ tanýmlanan dilin bir gerçeklemesidir.
 %patch4 -p1
 
 %build
-make
+%{__make}
 makeinfo scheme.texinfo
 
 %install
