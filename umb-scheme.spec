@@ -71,7 +71,6 @@ install prelude.scheme $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
-gzip -9nf slib/ANNOUNCE slib/FAQ slib/README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -84,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {slib/ANNOUNCE,slib/FAQ,slib/README}.gz
+%doc slib/ANNOUNCE slib/FAQ slib/README
 %attr(755,root,root) %{_bindir}/umb-scheme
 %{_libdir}/umb-scheme
 %{_mandir}/man1/*
