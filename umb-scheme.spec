@@ -18,6 +18,7 @@ Patch1:		%{name}-texinfo.patch
 Patch2:		%{name}-config.patch
 Patch3:		%{name}-man.patch
 Patch4:		%{name}-info.patch
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -73,14 +74,14 @@ install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
