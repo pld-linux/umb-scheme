@@ -5,7 +5,7 @@ Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	11
+Release:	12
 Copyright:	GPL
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
@@ -15,6 +15,7 @@ Patch1:		umb-scheme-texinfo.patch
 Patch2:		umb-scheme-config.patch
 Patch3:		umb-scheme-man.patch
 Patch4:		umb-scheme-info.patch
+Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -65,12 +66,10 @@ gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
 	slib/ANNOUNCE slib/FAQ slib/README
 
 %post
-/sbin/install-info %{_infodir}/umb-scheme.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/umb-scheme.info.gz /etc/info-dir
-fi
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
