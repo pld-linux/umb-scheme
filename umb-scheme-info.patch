@@ -1,6 +1,6 @@
---- scheme-3.2/scheme.texinfo.orig	Sun Mar  3 19:15:39 2002
-+++ scheme-3.2/scheme.texinfo	Sun Mar  3 19:15:46 2002
-@@ -64,7 +64,19 @@
+--- scheme-3.2/scheme.texinfo.orig	Sun Mar  3 19:23:18 2002
++++ scheme-3.2/scheme.texinfo	Sun Mar  3 19:29:20 2002
+@@ -64,7 +64,16 @@
  
  @ifinfo
  @node Top, Copying, Files, (DIR)
@@ -12,12 +12,18 @@
 +* umb-scheme: (umb-scheme)             UMB Scheme Interpreter
 +@end direntry
 +@end format
-+@end ifinfo
 +
-+@ifinfo
-+@node Top, Copying, Files, (DIR)
 +@chapter Introduction
 +@top IEEE Standard for the Scheme Programming Language
  
  This manual documents how to install and use UMB Scheme as
  well as its new features and incompatibilities, and how to report bugs.
+@@ -391,7 +400,7 @@
+ 
+ For example, consider the following @var{tak} benchmark code from
+ Richard P Gabriel, 
+-@var{Performance and Evaluation of Lisp Systems,}
++@var{Performance and Evaluation of Lisp Systems}
+ MIT Press, 1985.
+ @example
+ 
