@@ -1,23 +1,23 @@
---- scheme-3.2/scheme.texinfo~	Sun Jan 21 23:15:53 1996
-+++ scheme-3.2/scheme.texinfo	Sat Dec 15 17:01:23 2001
-@@ -63,8 +63,18 @@
+--- scheme-3.2/scheme.texinfo.orig	Sun Mar  3 18:56:44 2002
++++ scheme-3.2/scheme.texinfo	Sun Mar  3 19:06:03 2002
+@@ -62,8 +62,20 @@
+ @end titlepage
  @page
  
- @ifinfo
--@node Top, Copying,, (DIR)
--@ichapter Introduction
 +@format
 +@dircategory Programming Languages:
 +@direntry
-+* umb-scheme: (umb-scheme)		UMB Scheme Interpreter
++* umb-scheme: (umb-scheme)             UMB Scheme Interpreter
 +@end direntry
 +@end format
 +@end ifinfo
 +
-+@ifinfo
-+@node Top, Copying, Files, (DIR)
+ @ifinfo
+ @node Top, Copying, Files, (DIR)
 +@chapter Introduction
 +@top IEEE Standard for the Scheme Programming Language
++
++
+ @ichapter Introduction
  
  This manual documents how to install and use UMB Scheme as
- well as its new features and incompatibilities, and how to report bugs.
