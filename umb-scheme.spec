@@ -1,11 +1,14 @@
 Summary:	Scheme interpreter from U of Massachusetts at Boston
 Summary(de):	Scheme-Interpretierer von der Massachusetts-Uni in Boston 
+Summary(es):	Interpretador de esquema de la Universidad de Massachusetts en Boston
 Summary(fr):	Interpréteur Scheme de l'université du Massachusetts de Boston
+Summary(ja):	Scheme .$B%W%m%0%i%_%s%08@8l$N<BAu.(B
 Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
+Summary(pt_BR):	Interpretador de esquema da Universidade de Massachusetts em Boston
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	18
+Release:	22
 License:	GPL
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
@@ -26,6 +29,10 @@ Standard for the Scheme Programming Language (December, 1990).
 UMB-Scheme ist eine Implementierung der im IEEE-Standard für die
 Scheme-Programmiersprache (Dez. 1990) festgelegte Sprache.
 
+%description -l es
+UMB Scheme es una implementación al lenguaje descrito en el padrón
+IEEE para el lenguaje de programación Scheme (Diciembre de 1990).
+
 %description -l fr
 UMB Scheme est une implémentation du langage dans le standard IEEE
 pour la programation en langage Scheme (Décembre 1990).
@@ -33,6 +40,10 @@ pour la programation en langage Scheme (Décembre 1990).
 %description -l pl
 UMB Scheme jest implementacj± jêzyka opisanego w dokumencie: "IEEE
 Standard for the Scheme Programming Language (December, 1990)".
+
+%description -l pt_BR
+UMB Scheme é uma implementação da linguagem descrita no padrão IEEE
+para a linguagem de programação Scheme (Dezembro de 1990).
 
 %description -l tr
 UMB Scheme, IEEE Scheme Programlama Dili Standardý'nda (Aralýk, 1990)
