@@ -56,9 +56,9 @@ install -d $RPM_BUILD_ROOT/usr/{bin,info,lib/umb-scheme/slib,man/man1}
 install -s scheme $RPM_BUILD_ROOT/usr/bin/umb-scheme
 install scheme.1 $RPM_BUILD_ROOT%{_mandir}/man1/umb-scheme.1
 
-install slib/*.{scm,init} $RPM_BUILD_ROOT/usr/lib/umb-scheme/slib
-install prelude.scheme $RPM_BUILD_ROOT/usr/lib/umb-scheme
-install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT/usr/lib/umb-scheme
+install slib/*.{scm,init} $RPM_BUILD_ROOT%{_libdir}/umb-scheme/slib
+install prelude.scheme $RPM_BUILD_ROOT%{_libdir}/umb-scheme
+install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {slib/ANNOUNCE,slib/FAQ,slib/README}.gz
-/usr/lib/umb-scheme
+%{_libdir}/umb-scheme
 
 %attr(755,root,root) /usr/bin/umb-scheme
 %{_mandir}/man1/*
