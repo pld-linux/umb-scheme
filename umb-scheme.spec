@@ -5,9 +5,10 @@ Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	17
+Release:	18
 License:	GPL
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
 Patch0:		%{name}-misc.patch
@@ -46,14 +47,14 @@ tanýmlanan dilin bir gerçeklemesidir.
 %patch4 -p1
 
 %build
-%{__make}
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
 makeinfo scheme.texinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_infodir},%{_libdir}/umb-scheme/slib,%{_mandir}/man1}
 
-install -s scheme $RPM_BUILD_ROOT%{_bindir}/umb-scheme
+install scheme $RPM_BUILD_ROOT%{_bindir}/umb-scheme
 install scheme.1 $RPM_BUILD_ROOT%{_mandir}/man1/umb-scheme.1
 
 install slib/*.{scm,init} $RPM_BUILD_ROOT%{_libdir}/umb-scheme/slib
@@ -61,8 +62,7 @@ install prelude.scheme $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
-	slib/ANNOUNCE slib/FAQ slib/README
+gzip -9nf slib/ANNOUNCE slib/FAQ slib/README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -76,9 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {slib/ANNOUNCE,slib/FAQ,slib/README}.gz
-%{_libdir}/umb-scheme
-
 %attr(755,root,root) %{_bindir}/umb-scheme
+%{_libdir}/umb-scheme
 %{_mandir}/man1/*
-
-%{_infodir}/umb-scheme.info.gz
+%{_infodir}/umb-scheme.info*
