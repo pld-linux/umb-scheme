@@ -5,7 +5,7 @@ Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	10
+Release:	11
 Copyright:	GPL
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
@@ -51,7 +51,7 @@ makeinfo scheme.texinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,info,lib/umb-scheme/slib,man/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_infodir},%{_libdir}/umb-scheme/slib,%{_mandir}/man1}
 
 install -s scheme $RPM_BUILD_ROOT%{_bindir}/umb-scheme
 install scheme.1 $RPM_BUILD_ROOT%{_mandir}/man1/umb-scheme.1
@@ -61,7 +61,7 @@ install prelude.scheme $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 install SLIB-for-umb-scheme.init $RPM_BUILD_ROOT%{_libdir}/umb-scheme
 
 install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
+gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
 	slib/ANNOUNCE slib/FAQ slib/README
 
 %post
@@ -86,34 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/umb-scheme.info.gz
 
 %changelog
-* Mon Apr 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.2-10]
-- added Group(pl),
-- standarized {un}registering info pages (added umb-scheme-info.patch).
-
-* Sun Mar 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.2-9]
-- removed man group from man pages.
-
-* Sun Dec 13 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [3.2-8d]
-- major changes -- build for PLD Tornado. 
-
-* Thu Nov 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.2-8]
-- changed Buildroot to /tmp/%%{name}-%%{version}-root,
-- added using %%{name} and %%{version} in Source,
-- added full %attr description in %files,
-- in /usr/lib/umb-scheme/slib are installed only *.{scm,init} files.
-
-* Tue Aug 11 1998 Jeff Johnson <jbj@redhat.com>
-- build root
-
-* Mon Apr 27 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Fri Oct 24 1997 Marc Ewing <marc@redhat.com>
-- install-info
-
-* Fri Jul 18 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+* Mon Jun 21 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.2-11]
+- based on RH spec,
+- spec rewrited by PLD team,
+- pl translation by Wojtek ¦lusarczyk <wojtek@shadow.eu.org>.
