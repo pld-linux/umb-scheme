@@ -53,7 +53,7 @@ makeinfo scheme.texinfo
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,info,lib/umb-scheme/slib,man/man1}
 
-install -s scheme $RPM_BUILD_ROOT/usr/bin/umb-scheme
+install -s scheme $RPM_BUILD_ROOT%{_bindir}/umb-scheme
 install scheme.1 $RPM_BUILD_ROOT%{_mandir}/man1/umb-scheme.1
 
 install slib/*.{scm,init} $RPM_BUILD_ROOT%{_libdir}/umb-scheme/slib
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc {slib/ANNOUNCE,slib/FAQ,slib/README}.gz
 %{_libdir}/umb-scheme
 
-%attr(755,root,root) /usr/bin/umb-scheme
+%attr(755,root,root) %{_bindir}/umb-scheme
 %{_mandir}/man1/*
 
 %{_infodir}/umb-scheme.info.gz
