@@ -11,8 +11,6 @@ Version:	3.2
 Release:	22
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-texinfo.patch
