@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc slib/ANNOUNCE.gz slib/FAQ slib/README.gz
+%doc {slib/ANNOUNCE,slib/FAQ,slib/README}.gz
 /usr/lib/umb-scheme
 
 %attr(755,root,root) /usr/bin/umb-scheme
