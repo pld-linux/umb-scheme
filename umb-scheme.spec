@@ -1,5 +1,5 @@
 Summary:	Scheme interpreter from U of Massachusetts at Boston
-Summary(de):	Scheme-Interpretierer von der Massachusetts-Uni in Boston 
+Summary(de):	Scheme-Interpretierer von der Massachusetts-Uni in Boston
 Summary(es):	Interpretador de esquema de la Universidad de Massachusetts en Boston
 Summary(fr):	Interpréteur Scheme de l'université du Massachusetts de Boston
 Summary(ja):	Scheme .$B%W%m%0%i%_%s%08@8l$N<BAu.(B
