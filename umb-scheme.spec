@@ -5,16 +5,16 @@ Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	12
-Copyright:	GPL
+Release:	17
+License:	GPL
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
-Source:		ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
-Patch0:		umb-scheme-misc.patch
-Patch1:		umb-scheme-texinfo.patch
-Patch2:		umb-scheme-config.patch
-Patch3:		umb-scheme-man.patch
-Patch4:		umb-scheme-info.patch
+Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
+Patch0:		%{name}-misc.patch
+Patch1:		%{name}-texinfo.patch
+Patch2:		%{name}-config.patch
+Patch3:		%{name}-man.patch
+Patch4:		%{name}-info.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,12 +26,12 @@ UMB-Scheme ist eine Implementierung der im IEEE-Standard für die
 Scheme-Programmiersprache (Dez. 1990) festgelegte Sprache.
 
 %description -l fr
-UMB Scheme est une implémentation du langage dans le standard IEEE pour
-la programation en langage Scheme (Décembre 1990).
+UMB Scheme est une implémentation du langage dans le standard IEEE
+pour la programation en langage Scheme (Décembre 1990).
 
 %description -l pl
-UMB Scheme jest implementacj± jêzyka opisanego w dokumencie:
-"IEEE Standard for the Scheme Programming Language (December, 1990)".
+UMB Scheme jest implementacj± jêzyka opisanego w dokumencie: "IEEE
+Standard for the Scheme Programming Language (December, 1990)".
 
 %description -l tr
 UMB Scheme, IEEE Scheme Programlama Dili Standardý'nda (Aralýk, 1990)
