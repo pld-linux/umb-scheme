@@ -6,7 +6,7 @@ diff -Nru scheme-3.2/scheme.texinfo scheme-3.2.new/scheme.texinfo
  
  @ifinfo
 +@format
-+@dircategory Programming languages:
++@dircategory Programming Languages:
 +@direntry
 +* umb-scheme: (umb-scheme)		UMB Scheme Interpreter
 +@end direntry
