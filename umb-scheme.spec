@@ -12,6 +12,7 @@ Release:	23
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
+# Source0-md5:	dca1a603c32fab21aed6b769b02a3f82
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-texinfo.patch
 Patch2:		%{name}-config.patch
