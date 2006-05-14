@@ -8,7 +8,7 @@ Summary(pt_BR):	Interpretador de esquema da Universidade de Massachusetts em Bos
 Summary(tr):	UMB Scheme yorumlayýcýsý
 Name:		umb-scheme
 Version:	3.2
-Release:	24
+Release:	25
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
