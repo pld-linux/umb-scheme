@@ -1,11 +1,11 @@
 Summary:	Scheme interpreter from U of Massachusetts at Boston
-Summary(de):	Scheme-Interpretierer von der Massachusetts-Uni in Boston
-Summary(es):	Interpretador de esquema de la Universidad de Massachusetts en Boston
-Summary(fr):	Interpréteur Scheme de l'université du Massachusetts de Boston
-Summary(ja):	Scheme ¥×¥í¥°¥é¥ß¥ó¥°¸À¸ì¤Î¼ÂÁõ
-Summary(pl):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
-Summary(pt_BR):	Interpretador de esquema da Universidade de Massachusetts em Boston
-Summary(tr):	UMB Scheme yorumlayıcısı
+Summary(de.UTF-8):   Scheme-Interpretierer von der Massachusetts-Uni in Boston
+Summary(es.UTF-8):   Interpretador de esquema de la Universidad de Massachusetts en Boston
+Summary(fr.UTF-8):   InterprÃ©teur Scheme de l'universitÃ© du Massachusetts de Boston
+Summary(ja.UTF-8):   Scheme ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°è¨€èªã®å®Ÿè£…
+Summary(pl.UTF-8):   Interprter Scheme z uniwersytetu Massachusetts w Bostonie
+Summary(pt_BR.UTF-8):   Interpretador de esquema da Universidade de Massachusetts em Boston
+Summary(tr.UTF-8):   UMB Scheme yorumlayÄ±cÄ±sÄ±
 Name:		umb-scheme
 Version:	3.2
 Release:	25
@@ -25,29 +25,29 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 UMB Scheme is an implementation of the language described in the IEEE
 Standard for the Scheme Programming Language (December, 1990).
 
-%description -l de
-UMB-Scheme ist eine Implementierung der im IEEE-Standard für die
+%description -l de.UTF-8
+UMB-Scheme ist eine Implementierung der im IEEE-Standard fÃ¼r die
 Scheme-Programmiersprache (Dez. 1990) festgelegte Sprache.
 
-%description -l es
-UMB Scheme es una implementación al lenguaje descrito en el padrón
-IEEE para el lenguaje de programación Scheme (Diciembre de 1990).
+%description -l es.UTF-8
+UMB Scheme es una implementaciÃ³n al lenguaje descrito en el padrÃ³n
+IEEE para el lenguaje de programaciÃ³n Scheme (Diciembre de 1990).
 
-%description -l fr
-UMB Scheme est une implémentation du langage dans le standard IEEE
-pour la programation en langage Scheme (Décembre 1990).
+%description -l fr.UTF-8
+UMB Scheme est une implÃ©mentation du langage dans le standard IEEE
+pour la programation en langage Scheme (DÃ©cembre 1990).
 
-%description -l pl
-UMB Scheme jest implementacj± jêzyka opisanego w dokumencie: "IEEE
+%description -l pl.UTF-8
+UMB Scheme jest implementacjÄ… jÄ™zyka opisanego w dokumencie: "IEEE
 Standard for the Scheme Programming Language (December, 1990)".
 
-%description -l pt_BR
-UMB Scheme é uma implementação da linguagem descrita no padrão IEEE
-para a linguagem de programação Scheme (Dezembro de 1990).
+%description -l pt_BR.UTF-8
+UMB Scheme Ã© uma implementaÃ§Ã£o da linguagem descrita no padrÃ£o IEEE
+para a linguagem de programaÃ§Ã£o Scheme (Dezembro de 1990).
 
-%description -l tr
-UMB Scheme, IEEE Scheme Programlama Dili Standardı'nda (Aralık, 1990)
-tanımlanan dilin bir gerçeklemesidir.
+%description -l tr.UTF-8
+UMB Scheme, IEEE Scheme Programlama Dili StandardÄ±'nda (AralÄ±k, 1990)
+tanÄ±mlanan dilin bir gerÃ§eklemesidir.
 
 %prep
 %setup -q -n scheme-%{version}
