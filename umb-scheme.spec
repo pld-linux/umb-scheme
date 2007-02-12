@@ -1,11 +1,11 @@
 Summary:	Scheme interpreter from U of Massachusetts at Boston
-Summary(de.UTF-8):   Scheme-Interpretierer von der Massachusetts-Uni in Boston
-Summary(es.UTF-8):   Interpretador de esquema de la Universidad de Massachusetts en Boston
-Summary(fr.UTF-8):   Interpréteur Scheme de l'université du Massachusetts de Boston
-Summary(ja.UTF-8):   Scheme プログラミング言語の実装
-Summary(pl.UTF-8):   Interprter Scheme z uniwersytetu Massachusetts w Bostonie
-Summary(pt_BR.UTF-8):   Interpretador de esquema da Universidade de Massachusetts em Boston
-Summary(tr.UTF-8):   UMB Scheme yorumlayıcısı
+Summary(de.UTF-8):	Scheme-Interpretierer von der Massachusetts-Uni in Boston
+Summary(es.UTF-8):	Interpretador de esquema de la Universidad de Massachusetts en Boston
+Summary(fr.UTF-8):	Interpréteur Scheme de l'université du Massachusetts de Boston
+Summary(ja.UTF-8):	Scheme プログラミング言語の実装
+Summary(pl.UTF-8):	Interprter Scheme z uniwersytetu Massachusetts w Bostonie
+Summary(pt_BR.UTF-8):	Interpretador de esquema da Universidade de Massachusetts em Boston
+Summary(tr.UTF-8):	UMB Scheme yorumlayıcısı
 Name:		umb-scheme
 Version:	3.2
 Release:	25
