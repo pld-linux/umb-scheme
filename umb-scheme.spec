@@ -9,9 +9,10 @@ Summary(tr.UTF-8):	UMB Scheme yorumlayıcısı
 Name:		umb-scheme
 Version:	3.2
 Release:	26
-License:	GPL
+License:	GPL v1+
 Group:		Development/Languages
-Source0:	ftp://ftp.cs.umb.edu/pub/scheme/%{name}-%{version}.tar.Z
+# now https://github.com/ieee8023/UMB-Scheme ?
+Source0:	http://www.cs.umb.edu/~wrc/scheme/%{name}-%{version}.tar.Z
 # Source0-md5:	dca1a603c32fab21aed6b769b02a3f82
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-texinfo.patch
@@ -77,10 +78,10 @@ install scheme.info $RPM_BUILD_ROOT%{_infodir}/umb-scheme.info
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
@@ -88,5 +89,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc slib/ANNOUNCE slib/FAQ slib/README
 %attr(755,root,root) %{_bindir}/umb-scheme
 %{_libdir}/umb-scheme
-%{_mandir}/man1/*
+%{_mandir}/man1/umb-scheme.1*
 %{_infodir}/umb-scheme.info*
