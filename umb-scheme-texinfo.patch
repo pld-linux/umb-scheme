@@ -1,5 +1,14 @@
 --- scheme-3.2/scheme.texinfo.marc	Wed Aug 28 15:26:34 1996
 +++ scheme-3.2/scheme.texinfo	Wed Aug 28 15:27:01 1996
+@@ -35,7 +35,7 @@
+ @setchapternewpage odd
+ 
+ @titlepage
+-@title @thistitle
++@title UMB Scheme Release Notes
+ @subtitle last updated Janaury 22, 1996
+ @subtitle $Revision: 3.2 $
+ @author William R Campbell
 @@ -63,7 +63,7 @@
  @page
  
