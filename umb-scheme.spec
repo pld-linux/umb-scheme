@@ -8,7 +8,7 @@ Summary(pt_BR.UTF-8):	Interpretador de esquema da Universidade de Massachusetts 
 Summary(tr.UTF-8):	UMB Scheme yorumlayıcısı
 Name:		umb-scheme
 Version:	3.2
-Release:	26
+Release:	27
 License:	GPL v1+
 Group:		Development/Languages
 # now https://github.com/ieee8023/UMB-Scheme ?
