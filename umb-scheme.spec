@@ -8,7 +8,7 @@ Summary(pt_BR.UTF-8):	Interpretador de esquema da Universidade de Massachusetts 
 Summary(tr.UTF-8):	UMB Scheme yorumlayıcısı
 Name:		umb-scheme
 Version:	3.2
-Release:	28
+Release:	29
 License:	GPL v1+
 Group:		Development/Languages
 # now https://github.com/ieee8023/UMB-Scheme ?
@@ -59,7 +59,7 @@ tanımlanan dilin bir gerçeklemesidir.
 %patch -P4 -p1
 
 %build
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make} RPM_OPT_FLAGS="%{rpmcppflags} %{rpmcflags} -std=gnu11"
 makeinfo scheme.texinfo
 
 %install
